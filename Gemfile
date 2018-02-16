@@ -7,6 +7,7 @@ end
 
 ruby '2.4.3'
 
+gem 'figaro'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
