@@ -3,8 +3,8 @@
 
 <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
+  <%= f.input :info %>
   <%= f.input :picture %>
-  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+  <%= f.input :picture_cache, as: :hidden %>
+  <%= f.submit "Add a cocktail", class: "btn btn-treehouse" %>
 <% end %>
-<hr>
-<%= link_to "Back to the list", root_path %>

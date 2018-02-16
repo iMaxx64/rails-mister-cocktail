@@ -1,12 +1,14 @@
-<h1><%= @cocktail.name %></h1>
-
-<hr>
-
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @cocktail.picture, height: 300, width: 400, crop: :fill %>');">
+  <div class="banner-content">
+    <h2><%= @cocktail.name %></h2>
+    <p><%= @cocktail.info %></p>
+  </div>
+</div>
+<br>
 <% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %></p>
+  <p><%= dose.description %> of <%= dose.ingredient.name %></p>
   <%= link_to "Delete", dose_path(dose), data: {:confirm => 'Are you sure?'}, method: :delete %>
 <% end %>
 
 <%= link_to "Add dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Back to the list", root_path %>
 

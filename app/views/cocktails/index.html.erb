@@ -1,10 +1,16 @@
-<h1>INDEX</h1>
-<hr>
-<br>
-<% @cocktails.each do |cocktail| %>
-  <%= link_to cocktail_path(cocktail) do %>
-    <h2><%= cocktail.name %></h2>
-  <% end %>
-<% end %>
-
-<%= link_to "Add your cocktail", new_cocktail_path, class: "navbar-wagon-item navbar-wagon-link" %>
+<div class="container">
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-sm-4">
+          <%= link_to cocktail_path(cocktail) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.picture, height: 300, width: 400, crop: :fill %>');">
+              <div class="card-category"><h2><%= cocktail.name %></h2></div>
+              <div class="card-description">
+                <p><%= cocktail.info %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
